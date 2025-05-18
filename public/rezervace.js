@@ -195,7 +195,10 @@ function DostatData(panel = "all"){
 async function PrihlasitSe(){
     const data = DostatData("login");
     
-    if(data === undefined){console.log(data); return;} // Pokud není data, ukonči funkci
+    if(data === undefined){return;} // Pokud není data, ukonči funkci
+    console.log(data);
+    const jmeno = data[0];
+    const heslo = data[1];
     
    const response = await fetch('api/users/login',{
     method: 'POST',
