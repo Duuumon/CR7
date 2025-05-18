@@ -6,7 +6,7 @@ export default async function handler(request, response) { // Definuje a exportu
 
     const odkazRezervace = database.ref('rezervace').child(idFirebase); // Odkaz na konkrétní rezervaci v databázi
 
-    for(let i = 0; i < parametr.length; i++){
+    for(let i = 0; i < 2; i++){
         await odkazRezervace.update({ [parametr[i]]: novaHodnota[i]}); // Nastavení nové hodnoty pro daný parametr
     }
 
