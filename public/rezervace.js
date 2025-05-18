@@ -198,7 +198,7 @@ async function PrihlasitSe(){
     if(data === undefined) return; // Pokud není data, ukonči funkci
     
    const response = await fetch('api/users/login'),{
-    body: JSON.stingify(data);
+    body: data;
    }
 
    if(response.ok){
