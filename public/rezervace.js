@@ -11,7 +11,6 @@ function NastavCasADen() { // Nastavení minimální, maximální hodnoty a krok
     const inputId = ["datum", "cas-od", "cas-do"];
     const dneska = new Date(); // Získání aktuálního data
 
-    console.log("pidoras");
 
     if(dneska.getDay() === 5 || dneska.getDay() === 6){ 
          for(let i = 1; i < inputId.length; i++){
@@ -72,7 +71,6 @@ async function UkazatDostupneStoly() {
         
       }
     }else{
-        console.log("penis");
         ZobrazMensiStoly(data); // Zobrazí stoly s menším počtem míst než je zadaný počet lidí
     }
 }
@@ -88,7 +86,6 @@ function ZobrazMensiStoly(data){
 
 function ZmenBarvuOkraje(element, barva) { // Zobrazí varování, pokud je pole prázdné
     element.style.borderColor = barva; // Změna barvy okraje na červenou
-    console.log(barva);
 }
 
 function NastavBeznuBarvuStolu(stul = null)
@@ -126,13 +123,11 @@ NastavBeznuBarvuStolu(aktualnyStulId); // Nastavení běžné barvy stolů
     button.addEventListener('click', () => {
       predchoziStulId = aktualnyStulId; // Uložení ID předchozího stolu
       aktualnyStulId = button.id; // Získání ID tlačítka
-      console.log(`Stisknuto tlačítko s ID: ${aktualnyStulId}`); // Zobrazení ID v konzoli
 
       // Zobrazení pravého panelu
       const rightPanel = document.querySelector('.right-panel');
       rightPanel.style.visibility = 'visible';
       //zmena barvy vybraneho stolu
-      console.log(document.getElementById(aktualnyStulId));
       NastavBeznuBarvuStolu(predchoziStulId); // Nastavení běžné barvy stolů
       ZmenBarvuStolu(document.getElementById(aktualnyStulId), "rgba(204, 255, 50, 0.9)", "rgba(157, 204, 16, 0.9)"); // Změna barvy pozadí na červenou
     });
@@ -224,7 +219,6 @@ function ZobrazitAdminRezervaci(){
 async function VytvorSeznamRezervaci(){
 
     let rezervaci = await DostatDataZFireBase(); // Získání rezervací z databáze
-    console.log(rezervaci); // Zobrazení rezervací v konzoli
 
        const tabulka = document.createElement('table'); // Vytvoření nové tabulky
        tabulka.className = 'rezervations'; // Nastavení třídy pro tabulku
@@ -480,7 +474,6 @@ async function SmazatRezervaci(idRezervaciVFirebase){
 }
 
 async function DostatDataZFireBase() {
-    console.log("penis");
     const response = await fetch('/api/orders/get'); // dostat data z firebase
     ZkontrolujSpleniPozadavku(response); // Kontrola úspěšnosti získání dat
     
