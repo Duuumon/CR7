@@ -250,9 +250,7 @@ async function VytvorSeznamRezervaci(){
        const nazevEmail = document.createElement('th'); // Vytvoření nového názvu
             nazevEmail.textContent = "E-mail"; // Nastavení textu pro název
        const thedit = document.createElement('th'); // Vytvoření nového názvu
-            thedit.textContent = "Upravit"; // Nastavení textu pro název
-       const thdelete = document.createElement('th'); // Vytvoření nového názvu
-            thdelete.textContent = "Smazat"; // Nastavení textu pro název
+            thedit.textContent = ""; // Nastavení textu pro název
 
     for (const rezervace of rezervaci) { // Pro každou rezervaci
 
