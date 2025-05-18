@@ -332,7 +332,6 @@ async function VytvorSeznamRezervaci(){
       trhead.appendChild(nazevTelefon);
       trhead.appendChild(nazevEmail);
       trhead.appendChild(thedit);
-      trhead.appendChild(thdelete);
 
       hlavicka.appendChild(trhead);
 
