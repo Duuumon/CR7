@@ -475,7 +475,6 @@ async function SmazatRezervaci(idRezervaciVFirebase){
 
 async function DostatDataZFireBase() {
     const response = await fetch('/api/orders/get'); // dostat data z firebase
-    ZkontrolujSpleniPozadavku(response); // Kontrola úspěšnosti získání dat
     
     const data = await response.json(); // prevest z JSON
     if(!data){
