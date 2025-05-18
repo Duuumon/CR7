@@ -1,4 +1,4 @@
-export {getDatabase} from './database.js'; // Importuje funkci getDatabase z modulu database.js
+import {getDatabase} from './database.js'; // Importuje funkci getDatabase z modulu database.js
 
 export default async function handler(request, response) { // Definuje a exportuje asynchronní funkci handler, která zpracovává HTTP požadavky.
     const databaze = getDatabase();
