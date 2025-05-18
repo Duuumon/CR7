@@ -202,7 +202,7 @@ async function PrihlasitSe(){
     headers: {'Content-Type': 'rezervace/json'},
     body: JSON.stringify(jmeno, heslo)
    })
-
+    console.log("penis");
    if(response.ok){
         alert("Úspěšně přihlášeno jako moderátor.");
         ZavriLoginPanel();
