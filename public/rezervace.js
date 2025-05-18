@@ -198,6 +198,8 @@ async function PrihlasitSe(){
     if(data === undefined) return; // Pokud není data, ukonči funkci
     
    const response = await fetch('api/users/login',{
+    method: 'POST',
+    headers: {'Content-Type': 'rezervace/json'},
     body: JSON.stringify(data)
    })
 
