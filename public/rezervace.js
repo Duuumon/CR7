@@ -196,7 +196,6 @@ async function PrihlasitSe(){
     const data = DostatData("login");
     
     if(data === undefined){return;} // Pokud není data, ukonči funkci
-    console.log(data);
     const jmeno = data[0];
     const heslo = data[1];
     
@@ -205,7 +204,6 @@ async function PrihlasitSe(){
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({jmeno, heslo})
    })
-    console.log("penis");
    if(response.ok){
         alert("Úspěšně přihlášeno jako moderátor.");
         ZavriLoginPanel();
@@ -470,7 +468,6 @@ async function PoslatDataNaFireBase(){ // Odeslání dat na Firebase (PUT)
 }
 
 async function SmazatRezervaci(idRezervaciVFirebase){
-    console.log(idRezervaciVFirebase);
     const response = await fetch('/api/orders/delete', { // Smazání rezervace z Firebase
         method: "DELETE",
         headers: { 'Content-Type': 'application/json' }, // Nastaví HTTP hlavičku, která říká serveru, že posílaná data jsou ve formátu JSON
