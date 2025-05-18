@@ -365,7 +365,6 @@ async function VytvorSeznamRezervaci(){
 function ZkontrolujSpleniPozadavku(response){
  if (response.ok) {
         alert("Pozadavek byl uspesne splnen.");
-        VytvorSeznamRezervaci(); // Aktualizuj seznam rezervací
     } else {
         alert("Pozadavek nebyl splnen.");
     }
