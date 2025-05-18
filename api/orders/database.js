@@ -10,7 +10,7 @@ if(!process.env.FIREBASE_PRIVATE_KEY){
 if(!process.env.FIREBASE_CLIENT_EMAIL){
         throw new Error('FIREBASE_CLIENT_EMAIL');
 }
-
+console.log(process.env.FIREBASE_PROJECT_ID);
 const app = admin.apps.length
     ? admin.app()
     : admin.initializeApp({
