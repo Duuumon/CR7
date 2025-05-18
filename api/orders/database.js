@@ -21,6 +21,7 @@ const app = admin.apps.length
         }),
         databaseURL: `https://${process.env.FIREBASE_PROJECT_ID}.firebaseio.com`
     });
+console.log("databaze byla vytvorena");
 
 export function getDatabase() {
     return admin.database(app);
