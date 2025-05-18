@@ -499,7 +499,7 @@ async function UpravitRezervaceVDatavazi(idFirebase, parametry, hodnoty){
     const response = await fetch('/api/orders/edit', { // Odeslání dat na Firebase (PUT)
         method: "PATCH",
         headers: { 'Content-Type': 'application/json' }, // Nastaví HTTP hlavičku, která říká serveru, že posílaná data jsou ve formátu JSON
-        body: JSON.stringify(idFirebase, parametry, hodnoty) // Odeslání dat na server
+        body: JSON.stringify({idFirebase, parametry, hodnoty}) // Odeslání dat na server
     })
     ZkontrolujSpleniPozadavku(response); // Kontrola úspěšnosti odeslání
 }
