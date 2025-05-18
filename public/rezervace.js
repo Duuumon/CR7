@@ -187,15 +187,15 @@ function DostatData(panel = "all"){
                 dataLogin.push(element.value); // Přidání hodnoty do pole
             }
         }
-        return dataLogin[0], dataLogin[1]; // Vrátí pole s hodnotami
+        return dataLogin; // Vrátí pole s hodnotami
     }
 
 }
 
 async function PrihlasitSe(){
-    const {jmeno, heslo} = DostatData("login");
+    const data = DostatData("login");
     
-    if(jmeno === undefined || heslo === undefined) {console.log(jmeno, heslo); return;} // Pokud není data, ukonči funkci
+    if(data === undefined){console.log(data); return;} // Pokud není data, ukonči funkci
     
    const response = await fetch('api/users/login',{
     method: 'POST',
