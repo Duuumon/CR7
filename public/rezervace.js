@@ -495,6 +495,7 @@ async function DostatDataZFireBase() {
 }
 
 async function UpravitRezervaceVDatavazi(idFirebase, parametry, hodnoty){
+    console.log(idFirebase,parametry,hodnoty);
     const response = await fetch('/api/orders/put', { // Odeslání dat na Firebase (PUT)
         method: "PATCH",
         headers: { 'Content-Type': 'application/json' }, // Nastaví HTTP hlavičku, která říká serveru, že posílaná data jsou ve formátu JSON
