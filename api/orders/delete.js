@@ -1,4 +1,4 @@
-import { getDatabase } from './firebase.js'; // Importuje funkci getDatabase z modulu firebase.js
+import { getDatabase } from './database.js'; // Importuje funkci getDatabase z modulu firebase.js
 
 export default async function handler(request, response) { // Definuje a exportuje asynchronní funkci handler, která zpracovává HTTP požadavky.
     const database  = getDatabase();
