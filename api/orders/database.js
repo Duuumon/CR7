@@ -1,12 +1,14 @@
 import admin from 'firebase-admin';
 
 // Kontrola, jestli jsou všechny potřebné proměnné prostředí nastavené
-if (
-    !process.env.FIREBASE_PROJECT_ID ||
-    !process.env.FIREBASE_CLIENT_EMAIL ||
-    !process.env.FIREBASE_PRIVATE_KEY
-) {
-    throw new Error('Chybí některá z proměnných prostředí pro Firebase (FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY)');
+if (!process.env.FIREBASE_PROJECT_ID) {
+    throw new Error('FIREBASE_PROJECT_ID');
+}
+if(!process.env.FIREBASE_PRIVATE_KEY){
+    throw new Error('FIREBASE_PRIVATE_KEY');
+}
+if(!process.env.FIREBASE_CLIENT_EMAIL){
+        throw new Error('FIREBASE_CLIENT_EMAIL');
 }
 
 const app = admin.apps.length
