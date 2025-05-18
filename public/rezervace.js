@@ -187,20 +187,20 @@ function DostatData(panel = "all"){
                 dataLogin.push(element.value); // Přidání hodnoty do pole
             }
         }
-        return dataLogin; // Vrátí pole s hodnotami
+        return dataLogin[0], dataLogin[1]; // Vrátí pole s hodnotami
     }
 
 }
 
 async function PrihlasitSe(){
-    const data = DostatData("login");
+    const {jmeno, heslo} = DostatData("login");
     
     if(data === undefined) return; // Pokud není data, ukonči funkci
     
    const response = await fetch('api/users/login',{
     method: 'POST',
     headers: {'Content-Type': 'rezervace/json'},
-    body: JSON.stringify(data)
+    body: JSON.stringify(jmeno, heslo)
    })
 
    if(response.ok){
