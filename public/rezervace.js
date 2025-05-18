@@ -197,9 +197,9 @@ async function PrihlasitSe(){
     
     if(data === undefined) return; // Pokud není data, ukonči funkci
     
-   const response = await fetch('api/users/login'),{
-    body: data;
-   }
+   const response = await fetch('api/users/login',{
+    body: JSON.stringify(data)
+   })
 
    if(response.ok){
         alert("Úspěšně přihlášeno jako moderátor.");
