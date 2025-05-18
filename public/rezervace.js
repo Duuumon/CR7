@@ -470,7 +470,7 @@ async function PoslatDataNaFireBase(){ // Odeslání dat na Firebase (PUT)
 }
 
 async function SmazatRezervaci(idRezervaciVFirebase){
-
+    console.log(idRezervaciVFirebase);
     const response = await fetch('/api/orders/delete', { // Smazání rezervace z Firebase
         method: "DELETE",
         headers: { 'Content-Type': 'application/json' }, // Nastaví HTTP hlavičku, která říká serveru, že posílaná data jsou ve formátu JSON
