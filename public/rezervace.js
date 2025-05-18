@@ -203,7 +203,7 @@ async function PrihlasitSe(){
    const response = await fetch('api/users/login',{
     method: 'POST',
     headers: {'Content-Type': 'rezervace/json'},
-    body: JSON.stringify(jmeno, heslo)
+    body: JSON.stringify({jmeno, heslo})
    })
     console.log("penis");
    if(response.ok){
