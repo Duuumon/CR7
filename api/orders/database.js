@@ -10,7 +10,6 @@ const app = admin.apps.length
         }),
         databaseURL: process.env.FIREBASE_PROJECT_URL
     });
-console.log("databaze byla vytvorena");
 
 export function getDatabase() {
     return admin.database(app);
