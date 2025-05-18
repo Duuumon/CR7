@@ -192,22 +192,25 @@ function DostatData(panel = "all"){
 
 }
 
-function PrihlasitSe(){
+async function PrihlasitSe(){
     const data = DostatData("login");
     
     if(data === undefined) return; // Pokud není data, ukonči funkci
     
-    if(data[0] === adminLogin && data[1] === adminHeslo){ // Kontrola přihlašovacích údajů
+   const response = await fetch('api/users/login'),{
+    body: JSON.stingify(data);
+   }
+
+   if(response.ok){
         alert("Úspěšně přihlášeno jako moderátor.");
         ZavriLoginPanel();
         ZobrazitImgAOdhlasit();
         ZavritLevouPanel();
         jePrihlasen = true; 
         ZobrazitAdminRezervaci();
-    }else{
-        alert("uci uroki, dolbaeb");
-    }
-
+   }else{
+       alert("uci uroki, poc");
+   }
 }
 
 function ZobrazitAdminRezervaci(){
